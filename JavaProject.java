@@ -1,23 +1,25 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 public class JavaProject {
 
     public static void main(String[] args) {
-        //int[] anArray = new int[10];
+        // int[] anArray = new int[10];
         int[][] array = {
-            {1, 2, 3},
-            {4, 5, 6}
+                { 1, 2, 3 },
+                { 4, 5, 6 }
         };
 
         System.out.print(array[0].length);
     }
 }
+
 class ArrayCopyDemo {
     public static void main(String[] args) {
         String[] copyFrom = {
-            "Affogato", "Americano", "Cappuccino", "Corretto", "Cortado",
-            "Doppio", "Espresso", "Frappucino", "Freddo", "Lungo", "Macchiato",
-            "Marocchino", "Ristretto" };
+                "Affogato", "Americano", "Cappuccino", "Corretto", "Cortado",
+                "Doppio", "Espresso", "Frappucino", "Freddo", "Lungo", "Macchiato",
+                "Marocchino", "Ristretto" };
 
         String[] copyTo = new String[7];
         System.arraycopy(copyFrom, 2, copyTo, 0, 7);
@@ -30,10 +32,10 @@ class ArrayCopyDemo {
 class ArrayCopyOfDemo {
     public static void main(String[] args) {
         String[] copyFrom = {
-            "Affogato", "Americano", "Cappuccino", "Corretto", "Cortado",
-            "Doppio", "Espresso", "Frappucino", "Freddo", "Lungo", "Macchiato",
-            "Marocchino", "Ristretto" };
-        int[] c = {1, 2, 3};
+                "Affogato", "Americano", "Cappuccino", "Corretto", "Cortado",
+                "Doppio", "Espresso", "Frappucino", "Freddo", "Lungo", "Macchiato",
+                "Marocchino", "Ristretto" };
+        int[] c = { 1, 2, 3 };
         String[] copyTo = java.util.Arrays.copyOfRange(copyFrom, 2, 7);
         for (String coffee : copyTo) {
             System.out.print(coffee + " ");
@@ -44,6 +46,38 @@ class ArrayCopyOfDemo {
 
         boolean bool = java.util.Arrays.equals(copyFrom, copyTo);
         java.util.Arrays.fill(c, 0);
-        Arrays.sort(c);
     }
 }
+
+class copyMain {
+
+    public static void main(String[] args) {
+
+        int[] arr1 = { 1, 2, 3, 4, 5 };
+        int[] arr2 = Arrays.copyOf(arr1, arr1.length);
+        // 복사하고자하는 오리지널 배열 넣고, 복사하고자하는 총범위를 뒤에 넣어줌
+        for (int i = 0; i < arr2.length; i++) {
+            System.out.print(arr2[i] + " ");
+        }
+    }
+}
+
+class Sort {
+    public static void main(String[] args) {
+        int arr[] = { 4, 23, 33, 15, 17, 19 };
+        Arrays.sort(arr);
+
+        for (int i : arr) {
+            System.out.print("[" + i + "]");
+        }
+        System.out.println();
+
+        Integer arrInteger[] = { 4, 23, 33, 15, 17, 19 };
+        Arrays.sort(arrInteger, Collections.reverseOrder());
+
+        for (int i : arrInteger) {
+            System.out.print("[" + i + "]");
+        }
+    }
+}
+
