@@ -134,4 +134,20 @@ class ContinueDemo {
     }
 }
 
+class Test{
+    enum Day {
+         MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
+    public static void main(String[] args) {
+        Test.Day day = Day.FRIDAY;
+        int len = 0;
 
+        switch (day) {
+            case MONDAY, FRIDAY, SATURDAY -> len = 6; 
+            case TUESDAY -> len = 7;
+            case THURSDAY -> len = 8;
+            case WEDNESDAY -> len = 9;
+        }
+        System.out.println("len = " + len);
+    }
+}
