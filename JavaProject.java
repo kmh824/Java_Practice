@@ -1,5 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
+/*
+import javax.sql.rowset.spi.SyncResolver;
 
 public class JavaProject {
 
@@ -85,9 +87,9 @@ class BreakWithLabelDemo {
     public static void main(String[] args) {
 
         int[][] arrayOfInts = {
-            {  32,   87,    3, 589 },
-            {  12, 1076, 2000,   8 },
-            { 622,  127,   77, 955 }
+                { 32, 87, 3, 589 },
+                { 12, 1076, 2000, 8 },
+                { 622, 127, 77, 955 }
         };
         int searchfor = 12;
 
@@ -95,10 +97,8 @@ class BreakWithLabelDemo {
         int j = 0;
         boolean foundIt = false;
 
-    search:
-        for (i = 0; i < arrayOfInts.length; i++) {
-            for (j = 0; j < arrayOfInts[i].length;
-                 j++) {
+        search: for (i = 0; i < arrayOfInts.length; i++) {
+            for (j = 0; j < arrayOfInts[i].length; j++) {
                 if (arrayOfInts[i][j] == searchfor) {
                     foundIt = true;
                     break search;
@@ -130,24 +130,71 @@ class ContinueDemo {
             numPs++;
         }
         System.out.println("Found " + numPs + " p's in the string.");
-        
+
     }
 }
 
-class Test{
+class Test {
     enum Day {
-         MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
     }
+
     public static void main(String[] args) {
-        Test.Day day = Day.FRIDAY;
+        Day day = Day.FRIDAY;
         int len = 0;
 
         switch (day) {
-            case MONDAY, FRIDAY, SATURDAY -> len = 6; 
+            case MONDAY, FRIDAY, SATURDAY -> len = 6;
             case TUESDAY -> len = 7;
             case THURSDAY -> len = 8;
             case WEDNESDAY -> len = 9;
-        }
+        };
         System.out.println("len = " + len);
+        int quarter = 1; // any value
+
+        String quarterLabel = switch (quarter) {
+            case 0:
+                yield "Q1 - Winter";
+            case 1:
+                yield "Q2 - Spring";
+            case 2:
+                yield "Q3 - Summer";
+            case 3:
+                yield "Q3 - Summer";
+            default:
+                System.out.println("Unknown quarter");
+                yield "Unknown quarter";
+        };
+        System.out.println(quarterLabel);
+    }
+
+}
+ */
+
+class Bicycle {
+    public int cadence;
+    public int gear;
+    public int speed;
+
+    public Bicycle(int startCadence, int startSpeed, int startGear) {
+        gear = startGear;
+        cadence = startCadence;
+        speed = startSpeed;
+    }
+
+    public void setCadence(int newValue){
+        cadence = newValue;
+    }
+
+    public void setGear(int newValue) {
+        gear = newValue;
+    }
+        
+    public void applyBrake(int decrement) {
+        speed -= decrement;
+    }
+        
+    public void speedUp(int increment) {
+        speed += increment;
     }
 }
