@@ -171,23 +171,37 @@ class Test {
 }
  */
 
+// Class
+/* 
 class Bicycle {
-    public int cadence;
-    public int gear;
-    public int speed;
-
+   private int cadence;
+    private int gear;
+    private int speed;
+        
     public Bicycle(int startCadence, int startSpeed, int startGear) {
         gear = startGear;
         cadence = startCadence;
         speed = startSpeed;
     }
-
-    public void setCadence(int newValue){
+        
+    public int getCadence() {
+        return cadence;
+    }
+        
+    public void setCadence(int newValue) {
         cadence = newValue;
     }
-
+        
+    public int getGear() {
+        return gear;
+    }
+        
     public void setGear(int newValue) {
         gear = newValue;
+    }
+        
+    public int getSpeed() {
+        return speed;
     }
         
     public void applyBrake(int decrement) {
@@ -196,5 +210,100 @@ class Bicycle {
         
     public void speedUp(int increment) {
         speed += increment;
+    }
+
+}
+
+class MountainBike extends Bicycle {
+    // the MountainBike subclass has
+    // one field
+    public int seatHeight;
+
+    // the MountainBike subclass has
+    // one constructor
+    public MountainBike(int startHeight, int startCadence,int startSpeed, int startGear) {
+        super(startCadence, startSpeed, startGear);
+        seatHeight = startHeight;
+    }
+
+    // the MountainBike subclass has
+    // one method
+    public void setHeight(int newValue) {
+        seatHeight = newValue;
+    }
+}
+*/
+
+class CreateObjectDemo {
+
+    public static void main(String[] args) {
+        
+        
+        // Declare and create a point object and two rectangle objects.
+        Point originOne = new Point(23, 94);
+        Rectangle rectOne = new Rectangle(originOne, 100, 200);
+        Rectangle rectTwo = new Rectangle(50, 100);
+        
+        // display rectOne's width, height, and area
+        System.out.println("Width of rectOne: " + rectOne.width);
+        System.out.println("Height of rectOne: " + rectOne.height);
+        System.out.println("Area of rectOne: " + rectOne.getArea());
+        
+        // set rectTwo's position
+        rectTwo.origin = originOne;
+        
+        // display rectTwo's position
+        System.out.println("X Position of rectTwo: " + rectTwo.origin.x);
+        System.out.println("Y Position of rectTwo: " + rectTwo.origin.y);
+        
+        // move rectTwo and display its new position
+        rectTwo.move(40, 72);
+        System.out.println("X Position of rectTwo: " + rectTwo.origin.x);
+        System.out.println("Y Position of rectTwo: " + rectTwo.origin.y);
+    }
+}
+
+class Point {
+    public int x = 0;
+    public int y = 0;
+    // a constructor!
+    public Point(int a, int b) {
+    x = a;
+    y = b;
+    }
+}
+
+class Rectangle {
+    public int width = 0;
+    public int height = 0;
+    public Point origin;
+ 
+    // four constructors
+    public Rectangle() {
+    origin = new Point(0, 0);
+    }
+    public Rectangle(Point p) {
+    origin = p;
+    }
+    public Rectangle(int w, int h) {
+    origin = new Point(0, 0);
+    width = w;
+    height = h;
+    }
+    public Rectangle(Point p, int w, int h) {
+    origin = p;
+    width = w;
+    height = h;
+    }
+ 
+    // a method for moving the rectangle
+    public void move(int x, int y) {
+    origin.x = x;
+    origin.y = y;
+    }
+ 
+    // a method for computing the area of the rectangle
+    public int getArea() {
+    return width * height;
     }
 }
