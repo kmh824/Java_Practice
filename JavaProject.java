@@ -233,16 +233,17 @@ class MountainBike extends Bicycle {
     }
 }
 */
-
+/*
 class CreateObjectDemo {
 
     public static void main(String[] args) {
         
-        
+
         // Declare and create a point object and two rectangle objects.
         Point originOne = new Point(23, 94);
         Rectangle rectOne = new Rectangle(originOne, 100, 200);
         Rectangle rectTwo = new Rectangle(50, 100);
+        
         
         // display rectOne's width, height, and area
         System.out.println("Width of rectOne: " + rectOne.width);
@@ -271,6 +272,7 @@ class Point {
     x = a;
     y = b;
     }
+    
 }
 
 class Rectangle {
@@ -305,5 +307,25 @@ class Rectangle {
     // a method for computing the area of the rectangle
     public int getArea() {
     return width * height;
+    }
+}
+*/
+class Bicycle {
+        
+    private int cadence;
+    private int gear;
+    private int speed;
+        
+    // add an instance variable for the object ID
+    private int id;
+    
+    // add a class variable for the
+    // number of Bicycle objects instantiated
+    private static int numberOfBicycles = 0;
+        
+}
+class main {
+    public static void main(String[] args) {
+        
     }
 }
