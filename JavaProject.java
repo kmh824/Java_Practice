@@ -324,8 +324,8 @@ class Bicycle {
     private static int numberOfBicycles = 0;
         
 }
-class main {
+class maindvide {
     public static void main(String[] args) {
-        
+          
     }
 }
