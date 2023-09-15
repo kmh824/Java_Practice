@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Scanner;
 /*
 import javax.sql.rowset.spi.SyncResolver;
 
@@ -310,22 +311,42 @@ class Rectangle {
     }
 }
 */
+/*
 class Bicycle {
-        
+
     private int cadence;
     private int gear;
     private int speed;
-        
+
     // add an instance variable for the object ID
     private int id;
-    
+
     // add a class variable for the
     // number of Bicycle objects instantiated
     private static int numberOfBicycles = 0;
-        
+
 }
-class maindvide {
+ */
+
+class JavaStudy8 {
+    public static boolean inRect(int x, int y) {
+        if ((x >= 100 && x <= 200) && (y >= 100 && y <= 200))
+            return true;
+        else
+            return false;
+    }
+
     public static void main(String[] args) {
-          
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("첫 번째 x와 y좌표를 입력하세요.");
+        int x1 = scanner.nextInt();
+        int y1 = scanner.nextInt();
+
+        System.out.println("두 번째 x와 y좌표를 입력하세요.");
+        int x2 = scanner.nextInt();
+        int y2 = scanner.nextInt();
+
+        System.out.println((inRect(x1, y1) && inRect(x2, y2)) ? "충돌!" : "충돌하지 않음");
     }
 }
