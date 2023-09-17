@@ -327,7 +327,7 @@ class Bicycle {
 
 }
  */
-
+/*
 class JavaStudy8 {
     public static boolean inRect(int x, int y) {
         if ((x >= 100 && x <= 200) && (y >= 100 && y <= 200))
@@ -346,7 +346,8 @@ class JavaStudy8 {
         System.out.println("두 번째 x와 y좌표를 입력하세요.");
         int x2 = scanner.nextInt();
         int y2 = scanner.nextInt();
-
+        
         System.out.println((inRect(x1, y1) && inRect(x2, y2)) ? "충돌!" : "충돌하지 않음");
     }
 }
+ */
