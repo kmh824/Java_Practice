@@ -351,4 +351,23 @@ class JavaStudy8 {
     }
 }
  */
-//
+
+class Outer {
+    private int num = 55;
+    void m3() {
+        class Local{
+            void showNum(){
+                System.out.println(num);
+            }
+        }
+        Local local = new Local();
+        local.showNum();
+    }
+}
+
+public class JavaProject {
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        outer.m3();
+    }
+}
