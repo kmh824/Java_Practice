@@ -1,176 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
-/*
-import javax.sql.rowset.spi.SyncResolver;
-
-public class JavaProject {
-
-    public static void main(String[] args) {
-        // int[] anArray = new int[10];
-        int[][] array = {
-                { 1, 2, 3 },
-                { 4, 5, 6 }
-        };
-
-        System.out.print(array[0].length);
-    }
-}
-
-class ArrayCopyDemo {
-    public static void main(String[] args) {
-        String[] copyFrom = {
-                "Affogato", "Americano", "Cappuccino", "Corretto", "Cortado",
-                "Doppio", "Espresso", "Frappucino", "Freddo", "Lungo", "Macchiato",
-                "Marocchino", "Ristretto" };
-
-        String[] copyTo = new String[7];
-        System.arraycopy(copyFrom, 2, copyTo, 0, 7);
-        for (String coffee : copyTo) {
-            System.out.print(coffee + " ");
-        }
-    }
-}
-
-class ArrayCopyOfDemo {
-    public static void main(String[] args) {
-        String[] copyFrom = {
-                "Affogato", "Americano", "Cappuccino", "Corretto", "Cortado",
-                "Doppio", "Espresso", "Frappucino", "Freddo", "Lungo", "Macchiato",
-                "Marocchino", "Ristretto" };
-        int[] c = { 1, 2, 3 };
-        String[] copyTo = java.util.Arrays.copyOfRange(copyFrom, 2, 7);
-        for (String coffee : copyTo) {
-            System.out.print(coffee + " ");
-        }
-
-        int index = java.util.Arrays.binarySearch(c, 1);
-        System.out.println(index);
-
-        boolean bool = java.util.Arrays.equals(copyFrom, copyTo);
-        java.util.Arrays.fill(c, 0);
-    }
-}
-
-class copyMain {
-
-    public static void main(String[] args) {
-
-        int[] arr1 = { 1, 2, 3, 4, 5 };
-        int[] arr2 = Arrays.copyOf(arr1, arr1.length);
-        // 복사하고자하는 오리지널 배열 넣고, 복사하고자하는 총범위를 뒤에 넣어줌
-        for (int i = 0; i < arr2.length; i++) {
-            System.out.print(arr2[i] + " ");
-        }
-    }
-}
-
-class Sort {
-    public static void main(String[] args) {
-        int arr[] = { 4, 23, 33, 15, 17, 19 };
-        Arrays.sort(arr);
-
-        for (int i : arr) {
-            System.out.print("[" + i + "]");
-        }
-        System.out.println();
-
-        Integer arrInteger[] = { 4, 23, 33, 15, 17, 19 };
-        Arrays.sort(arrInteger, Collections.reverseOrder());
-
-        for (int i : arrInteger) {
-            System.out.print("[" + i + "]");
-        }
-    }
-}
-
-class BreakWithLabelDemo {
-    public static void main(String[] args) {
-
-        int[][] arrayOfInts = {
-                { 32, 87, 3, 589 },
-                { 12, 1076, 2000, 8 },
-                { 622, 127, 77, 955 }
-        };
-        int searchfor = 12;
-
-        int i;
-        int j = 0;
-        boolean foundIt = false;
-
-        search: for (i = 0; i < arrayOfInts.length; i++) {
-            for (j = 0; j < arrayOfInts[i].length; j++) {
-                if (arrayOfInts[i][j] == searchfor) {
-                    foundIt = true;
-                    break search;
-                }
-            }
-        }
-
-        if (foundIt) {
-            System.out.println("Found " + searchfor + " at " + i + ", " + j);
-        } else {
-            System.out.println(searchfor + " not in the array");
-        }
-    }
-}
-
-class ContinueDemo {
-    public static void main(String[] args) {
-
-        String searchMe = "peter piper picked a " + "peck of pickled peppers";
-        int max = searchMe.length();
-        int numPs = 0;
-
-        for (int i = 0; i < max; i++) {
-            // interested only in p's
-            if (searchMe.charAt(i) != 'p')
-                continue;
-
-            // process p's
-            numPs++;
-        }
-        System.out.println("Found " + numPs + " p's in the string.");
-
-    }
-}
-
-class Test {
-    enum Day {
-        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
-    }
-
-    public static void main(String[] args) {
-        Day day = Day.FRIDAY;
-        int len = 0;
-
-        switch (day) {
-            case MONDAY, FRIDAY, SATURDAY -> len = 6;
-            case TUESDAY -> len = 7;
-            case THURSDAY -> len = 8;
-            case WEDNESDAY -> len = 9;
-        };
-        System.out.println("len = " + len);
-        int quarter = 1; // any value
-
-        String quarterLabel = switch (quarter) {
-            case 0:
-                yield "Q1 - Winter";
-            case 1:
-                yield "Q2 - Spring";
-            case 2:
-                yield "Q3 - Summer";
-            case 3:
-                yield "Q3 - Summer";
-            default:
-                System.out.println("Unknown quarter");
-                yield "Unknown quarter";
-        };
-        System.out.println(quarterLabel);
-    }
-
-}
- */
+import java.util.Random;
 
 // Class
 /* 
@@ -351,7 +182,8 @@ class JavaStudy8 {
     }
 }
  */
-class DataStructure {
+/*
+ class DataStructure {
 
     // Create an array
     private final static int SIZE = 15;
@@ -374,7 +206,8 @@ class DataStructure {
         System.out.println();
     }
 
-    interface DataStructureIterator extends java.util.Iterator<Integer> { }
+    interface DataStructureIterator extends java.util.Iterator<Integer> {
+    }
 
     // Inner class implements the DataStructureIterator interface,
     // which extends the Iterator<Integer> interface
@@ -402,7 +235,6 @@ class DataStructure {
     }
 
     public static void main(String s[]) {
-
         // Fill the array with integer values and print out only
         // values of even indices
         DataStructure ds = new DataStructure();
@@ -410,3 +242,56 @@ class DataStructure {
     }
 }
 
+class Practice {
+    public static void main(String[] args) {
+        boolean[] bool = { true, false, false, true };
+        double[][] d = new double[5][4];
+        int[][] val = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+
+        char[] alpha = { 'a', 'b', 'c', 'd' };
+        for (int i = 0; i < alpha.length; i++)
+            System.out.print(alpha[i]);
+        for (char c : alpha)
+            System.out.print(c);
+
+        double[][] arr = { { 1.1, 1.2, 1.2, 1.4 }, { 2.1, 2.2 }, { 3.1, 3.2, 1.2 }, { 4.1 } };
+        double[][] arr1 = new double[4][];
+        arr[1][0] = 1.1;
+    }
+}
+*/
+public class JavaProject {
+    static String[] str = { "가위", "바위", "보" };
+
+    static String RPSgame(String ans, int num) {
+        if (str[num].equals(ans))
+            return "비겼습니다.";
+        else if (ans.equals("가위")) {
+            return (str[num].equals("보") ? "사용자가 이겼습니다" : "사용자가 졌습니다");
+        } else if (ans.equals("바위")) {
+            return (str[num].equals("가위") ? "사용자가 이겼습니다" : "사용자가 졌습니다");
+        } else if (ans.equals("보")) {
+            return (str[num].equals("바위") ? "사용자가 이겼습니다" : "사용자가 졌습니다");
+        } else
+            return "다시 입력하세요";
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        System.out.println("컴퓨터와 가위 바위 보 게임을 합니다");
+        while (true) {
+            int randomNum = random.nextInt(3);
+            System.out.print("가위 바위 보! >> ");
+            String answer = scanner.nextLine();
+            if (answer.equals("그만")) {
+                System.out.println("게임을 종료합니다...");
+                break;
+            } else {
+                System.out.println("사용자 = " + answer + " , 컴퓨터 = " + str[randomNum] + "," + RPSgame(answer, randomNum));
+            }
+        }
+        scanner.close();
+    }
+}
