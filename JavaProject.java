@@ -292,6 +292,7 @@ public class JavaProject {
                 System.out.println("사용자 = " + answer + " , 컴퓨터 = " + str[randomNum] + "," + RPSgame(answer, randomNum));
             }
         }
-        scanner.close();
+        
+
     }
 }
