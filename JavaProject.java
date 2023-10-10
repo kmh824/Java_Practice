@@ -325,7 +325,7 @@ class Rectangle{
 			return false;
 	}
 }
-
+//hjk
 public class JavaProject {
 	public static void main(String args[]) {
 		Rectangle r = new Rectangle(2, 2, 8, 7);
