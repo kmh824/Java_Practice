@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 import java.util.Random;
-
+import java.util.StringTokenizer;
 // Class
 /* 
 class Bicycle {
@@ -296,7 +296,7 @@ public class JavaProject {
     }
 }
  */
-
+/*
 class Rectangle{
 	private int x;
 	private int y;
@@ -325,7 +325,6 @@ class Rectangle{
 			return false;
 	}
 }
-//hjk
 public class JavaProject {
 	public static void main(String args[]) {
 		Rectangle r = new Rectangle(2, 2, 8, 7);
@@ -336,5 +335,114 @@ public class JavaProject {
 		System.out.println("의 면적은 "+s.square());
 		if(t.contains(r)) System.out.println("t는 r을 포함합니다.");
 		if(t.contains(s)) System.out.println("t는 s를 포함합니다.");
+	}
+}
+ */
+/*
+ class Example {
+    public static void main(String[] args) {
+        int sum = 0;
+
+        StringTokenizer st = new StringTokenizer("a=3,b=5,c=6", ",=");
+        while (st.hasMoreTokens()) {
+            int n = 0;
+            String str = st.nextToken();
+            System.out.println(str);
+
+            try {
+                n = Integer.parseInt(str);
+            } catch (NumberFormatException e) {
+
+            }
+            sum += n;
+        }
+        System.out.println(sum);
+    }
+}
+*/
+
+
+class Person {
+	private String name;
+	
+	public Person(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String turn() { // 턴이 돌아오면 Enter키 입력받기
+		Scanner sc = new Scanner(System.in);
+		System.out.print("["+name+"]:");
+		return sc.nextLine();
+	}
+	
+	public boolean RandomNum() { // 랜덤숫자 3개 생성 후 일치하는지 확인
+		int num[] = new int[3];
+		
+		for(int i=0; i<3; i++) {
+			num[i] = (int)(Math.random()*3+1);
+			System.out.print(num[i]+"\t");
+		}
+		
+		boolean result = true;
+		for(int i=0; i<3; i++) {
+			if(num[0] != num[i]) {
+				result = false; // 불일치
+				break;
+			}
+		}
+		return result;
+	}
+}
+
+class GamblingGame {
+	Person person[];
+	Scanner sc = new Scanner(System.in);
+	
+	public GamblingGame() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("갬블링 게임에 참여할 선수 숫자>>");
+		int num = sc.nextInt();
+		
+		person = new Person[num]; // 인원만큼 Person 생성
+		
+		for(int i=0; i<person.length; i++) {
+			System.out.print((i+1) + "번째 선수 이름>>");
+			person[i] = new Person(sc.next());
+		}
+	}
+	
+	public void Run() {
+		while(true) {
+			for(int i=0; i<person.length; i++) {
+				String s = person[i].turn();
+				if(s.equals("")) {
+					System.out.println("<Enter>");
+				}
+				else {
+					System.out.println("<Enter>키만 입력 가능합니다.");
+					return;
+				}
+				
+				// RandomNum()으로 랜덤 숫자가 서로 같은 지 비교 후
+				if(person[i].RandomNum()) {
+					System.out.println(person[i].getName() + "님이 이겼습니다!");
+					return;
+				}
+				else
+					System.out.println("아쉽군요!");
+			}
+		}
+	}
+}
+
+public class Practice {
+	public static void main(String[] args) {
+		GamblingGame game = new GamblingGame();
+		game.Run();
 	}
 }
