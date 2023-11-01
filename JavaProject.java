@@ -296,7 +296,7 @@ public class JavaProject {
     }
 }
  */
-
+/*
 class Rectangle{
 	private int x;
 	private int y;
@@ -323,11 +323,13 @@ class Rectangle{
 			return true;
 		else
 			return false;
+        
 	}
 }
-//hjk
+
+
 public class JavaProject {
-	public static void main(String args[]) {
+    public static void main(String args[]) {
 		Rectangle r = new Rectangle(2, 2, 8, 7);
 		Rectangle s = new Rectangle(5, 5, 6, 6);
 		Rectangle t = new Rectangle(1, 1, 10, 10);
@@ -338,3 +340,6 @@ public class JavaProject {
 		if(t.contains(s)) System.out.println("t는 s를 포함합니다.");
 	}
 }
+
+*/
+
