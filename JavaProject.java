@@ -346,9 +346,8 @@ public class JavaProject {
 <<<<<<< HEAD
 
 */
+import java.util.Vector;
 
-=======
- */
 /*
  class Example {
     public static void main(String[] args) {
@@ -372,7 +371,7 @@ public class JavaProject {
 }
 */
 
-
+/*
 class Person {
 	private String name;
 	
@@ -451,10 +450,44 @@ class GamblingGame {
 	}
 }
 
-public class Practice {
+public class JavaProject {
 	public static void main(String[] args) {
 		GamblingGame game = new GamblingGame();
 		game.Run();
 	}
 }
->>>>>>> 369e1332e53d14a877b5ee49785fffc1c34f538a
+*/
+
+import java.util.ArrayList;
+
+interface IStack<T> {
+	T pop();
+	boolean push(T ob);
+}
+class MyStack<T> implements IStack<T> {
+	Vector<T> vec = null;
+	public MyStack() {
+		vec = new Vector<T>();
+	}
+	public T pop() {
+		if (vec.size() == 0)
+			return null;
+		else 
+			return vec.remove(0);
+	}
+	public boolean push(T obj) {
+		vec.add(0, obj);
+		return true;
+	}
+}
+class StackManager {
+	public static void main(String[] args) {
+		IStack<Integer> stack = new MyStack<Integer>();
+		for (int i=0; i<10; i++) stack.push(i);
+		while(true) {
+			Integer  n = stack.pop();
+			if(n == null) break;
+			System.out.print(n+" ");
+		}
+	}
+}
